@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education</title>
+    
+    
+    <!-- Pautan ke fail CSS Luaran (PENTING) -->
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<!-- Bekas untuk animasi bunga terapung -->
+<div id="floating-container"></div>
+
+<!-- Navigasi -->
+<nav>
+   <ul class="nav-links">
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="biodata.html" target="_blank">About Me</a></li>
+        <li><a href="exp.html" target="_blank">Experience</a></li>
+        <li><a href="edu.html" target="_blank">Education</a></li>
+        <li><a href="fam.html" target="_blank">Family</a></li>
+        <li><a href="album.html" target="_blank">Gallery</a></li>
+    </ul>
+    <div class="date-badge" id="currentDate">Loading Date...</div>
+</nav>
+
+<!-- Header -->
+<header>
+    <h1>My Education</h1>
+</header>
+
+<!-- Kandungan Timeline -->
+<div class="timeline-container">
+
+    <!-- Row 1: Tadika -->
+    <div class="timeline-row">
+        <div class="col-side col-left">
+            <img src="tadika.jpeg" alt="Kindergarten Photo" class="timeline-img">
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="col-side col-right">
+            <div class="content-box">
+                <div class="inner-box">
+                    <h3>Tadika Cahaya Sinar Iman (2010 - 2011)</h3>
+                    <p>Started my learning journey with fun and creativity at kindergarten.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Sekolah Rendah -->
+    <div class="timeline-row">
+        <div class="col-side col-left">
+            <div class="content-box">
+                <div class="inner-box">
+                    <h3>Sekolah Kebangsaan Taman Universiti </h3>
+                    <h3>Sekolah Rendah Islam Fathul Furqan (2012 - 2017)</h3> 
+                    <p>Built strong basics and discovered my interests during primary school.</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="col-side col-right">
+            <div class="image-group">
+                <img src="sk.jpeg" alt="School Photo 1" class="timeline-img" usemap="#schoolMap1">
+                <map name="schoolMap1">
+                    <area shape="rect" coords="0,0,1000,1000" href="https://www.google.com/maps/place/SK+Taman+Universiti/@3.0054,101.6875458,17z/data=!3m1!4b1!4m6!3m5!1s0x31cdb56e0ed17ee3:0x18cf5dab2efbff7b!8m2!3d3.0054!4d101.6901207!16s%2Fg%2F1230ph3k?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" alt="Photo 1" title="View Photo 1">
+                </map>
+
+                <img src="sra.jpeg" alt="School Photo 2" class="timeline-img" usemap="#schoolMap2">
+                <map name="schoolMap2">
+                    <area shape="rect" coords="0,0,1000,1000" href="https://www.facebook.com/p/Sek-Ren-Islam-Fathul-Furqan-61571285297776/" alt="Photo 2" title="View Photo 2">
+                </map>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: Sekolah Menengah -->
+    <div class="timeline-row">
+        <div class="col-side col-left">
+            <img src="smk.png" alt="Secondary School Photo" class="timeline-img" usemap="#smkMap">
+            <map name="smkMap">
+                <area shape="rect" coords="0,0,1000,1000" href="https://www.google.com/maps/place/SMK+Seri+Serdang/@3.0067654,101.711622,17z/data=!3m1!4b1!4m6!3m5!1s0x31cdca9bbabf1df1:0xda5a0db253e5019d!8m2!3d3.0067654!4d101.7141969!16s%2Fg%2F11df0r3bxq?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="View Photo">
+            </map>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="col-side col-right">
+            <div class="content-box">
+                <div class="inner-box">
+                    <h3>Sekolah Menengah Kebangsaan Seri Serdang (2018 - 2022)</h3>
+                    <p>Enhanced academic skills and explored new opportunities in secondary school.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 4: Universiti -->
+    <div class="timeline-row">
+        <div class="col-side col-left">
+            <div class="content-box">
+                <div class="inner-box">
+                    <h3>UiTM Segamat (2023 - Present)</h3>
+                    <p>Currently pursuing my diploma at university to achieve my career goals.</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="col-side col-right">
+            <img src="UiTM.jpg" alt="University Photo" class="timeline-img" usemap="#uniMap">
+            <map name="uniMap">
+                <area shape="rect" coords="0,0,1000,1000" href="https://johor.uitm.edu.my/" target="_blank" title="UiTM Website">
+            </map>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+</footer>
+
+<!-- Butang Scroll to Top -->
+<button id="scrollToTopBtn" title="Go to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Javascript (Logik Halaman) -->
+<script>
+    // 1. Logik Bunga Terapung (Floating Flowers)
+    function createFloatingFlower() {
+        const container = document.getElementById('floating-container');
+        const flower = document.createElement('div');
+        flower.classList.add('floating-item');
+        flower.innerText = '🌷'; 
+
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+        flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+        container.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 20000); 
+    }
+
+    setInterval(createFloatingFlower, 500);
+
+    // 2. Logik Tarikh Semasa
+    const dateElement = document.getElementById('currentDate');
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = today.toLocaleDateString('en-US', options);
+
+    // 3. Logik Butang Scroll to Top
+    let mybutton = document.getElementById("scrollToTopBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "flex";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    mybutton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+</body>
+</html>
