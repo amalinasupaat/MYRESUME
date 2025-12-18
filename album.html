@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Album</title>
+    
+    
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+   
+    <div id="floating-container"></div>
+    
+    
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biodata.html">About Me</a></li>
+            <li><a href="exp.html">Experience</a></li>
+            <li><a href="edu.html">Education</a></li>
+            <li><a href="fam.html">Family</a></li>
+            <li><a href="album.html" class="active">Gallery</a></li>
+        </ul>
+        <div class="date-badge" id="currentDate">Loading Date...</div>
+    </nav>
+
+    
+    <header>
+        <h1>My Gallery</h1>
+       
+    </header>
+
+
+    <div class="gallery-wrapper">
+        <div class="gallery">
+            
+            
+            <div class="frame">
+                <img src="gallery1.jpg" alt="Memory 1">
+            </div>
+
+            
+            <div class="frame">
+                <img src="gallery2.jpg" alt="Memory 2">
+            </div>
+
+            
+            <div class="frame">
+                <video controls autoplay muted loop>
+                    <source src="video1.mp4" type="video/mp4">
+                    
+                </video>
+            </div>
+
+           
+            <div class="frame">
+                <img src="gallery3.jpeg" alt="Memory 3">
+            </div>
+
+            
+            <div class="frame">
+                <img src="gallery4.jpeg" alt="Memory 4">
+            </div>
+
+            <!-- Gambar 5 -->
+            <div class="frame">
+                <img src="gallery5.jpeg" alt="Memory 5">
+            </div>
+
+           
+            <div class="frame">
+                <img src="gallery6.jpeg" alt="Memory 6">
+            </div>
+
+            
+            <div class="frame">
+                <img src="gallery7.jpg" alt="Memory 7">
+            </div>
+
+            
+            <div class="frame">
+                <img src="gallery8.jpeg" alt="Memory 8">
+            </div>
+
+           
+            <div class="frame">
+                <img src="gallery9.jpeg" alt="Memory 9">
+            </div>
+
+            
+            <div class="frame">
+                <img src="gallery10.jpeg" alt="Memory 10">
+            </div>
+
+            
+            <div class="frame">
+                <img src="gallery11.jpg" alt="Memory 11">
+            </div>
+
+           
+            <div class="frame">
+                <img src="gallery12.jpeg" alt="Memory 12">
+            </div>
+
+            
+            <div class="frame">
+                 <video controls autoplay muted loop>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <
+            <div class="frame">
+                <img src="gallery13.jpeg" alt="Memory 13">
+            </div>
+
+        </div>
+    </div>
+    
+    
+    <footer>
+        <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+        
+    </footer>
+
+    
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    
+   
+    <script>
+       
+        function createFloatingFlower() {
+            const container = document.getElementById('floating-container');
+            const flower = document.createElement('div');
+            flower.classList.add('floating-item');
+            flower.innerText = '🌷'; // Boleh tukar icon bunga lain 🌸 🌺 🌻
+
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+            flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+            container.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 20000); 
+        }
+
+        setInterval(createFloatingFlower, 800); // Muncul setiap 0.8 saat
+
+    
+        const dateElement = document.getElementById('currentDate');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+
+        
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "flex"; // Guna flex supaya icon center
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        mybutton.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+</body>
+</html>
