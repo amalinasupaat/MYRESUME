@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Biodata</title>
+    <!-- Font Awesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('bg.jpg'); 
+            background-color: #fdfdfd; 
+            padding: 20px;
+            overflow-x: hidden; 
+        }
+
+        #floating-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: -1; 
+            overflow: hidden;
+        }
+
+        .floating-item {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            animation: floatUp linear infinite;
+            opacity: 0.7;
+            user-select: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+        
+         nav {
+            background-color: #F3E5F5; 
+            padding: 15px 30px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A148C;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d63384;
+        }
+
+        .date-badge {
+            position: absolute;
+            right: 20px;
+            background-color:#F3E5F5;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #2D2D2D;
+            font-weight: 500;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #F3E5F5;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #4A148C;
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px; 
+            position: relative; 
+            z-index: 1; 
+            transition: all 0.3s ease-in-out;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(74, 20, 140, 0.15); 
+        }
+
+        .info-card h2 {
+            color: #4A148C;
+            font-size: 24px; 
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .inner-box {
+            background-color: #F3E5F5; 
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        .details-table {
+            width: 100%;
+            border-collapse: collapse; 
+        }
+
+        .details-table .label-col {
+            background-color: #ffffff; 
+            color: #4A148C;
+            font-weight: 700;
+            width: 30%;
+            padding: 15px 20px;
+            border-bottom: 1px solid #d1c4e9; 
+            border-right: 1px solid #d1c4e9; 
+        }
+
+        .details-table .info-col {
+            padding: 15px 20px;
+            border-top: 1px solid #d1c4e9;   
+            border-right: 1px solid #d1c4e9; 
+            border-bottom: 1px solid #d1c4e9; 
+            color: #4a4a4a;   
+            font-weight: 400; 
+            font-size: 1rem;
+        }
+
+        .details-table tr:first-child .label-col { 
+            border-top-left-radius: 10px; 
+        }
+        
+        .details-table tr:last-child .label-col { 
+            border-bottom-left-radius: 10px; 
+            border-bottom: none; 
+        }
+
+        .fav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .fav-list li {
+            color: #4a4a4a;   
+            font-size: 1rem;  
+            font-weight: 400; 
+            margin-bottom: 10px;
+        }
+
+        .fav-list.with-bullets li::before {
+            content: "•";
+            color: #4A148C;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        
+        .slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: 0 auto; 
+        }
+
+        .mySlides { display: none; }
+
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 12px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            user-select: none;
+            background: rgba(0,0,0,0.4);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .next { right: 0; }
+        .prev { left: 0; }
+        
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+        .dot-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+
+        .active { background-color: #717171; }
+
+        
+        .drama-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
+
+        .drama-card {
+            background-color: #F3E5F5; 
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: 250px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; 
+        }
+
+        .drama-card img {
+            width: 100%;
+            height: 300px; 
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.4s ease;
+        }
+
+        .drama-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+        }
+
+        .drama-card:hover img {
+            transform: scale(1.05); 
+        }
+
+        .drama-title {
+            color: #4a4a4a;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        
+        .song-container {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: center; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+        }
+
+        .song-item {
+            text-align: center;
+            width: 280px; 
+            padding: 20px;
+            background-color: #F3E5F5; 
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .song-item img {
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.4s ease;
+        }
+
+        .song-item:hover {
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .song-item:hover img {
+            transform: scale(1.05); 
+        }
+
+        .song-title {
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            min-height: 40px; 
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+        }
+        
+        
+        .btn-resume-container {
+            text-align: center; 
+            margin-top: 30px;  
+        }
+
+        .btn-resume {
+            background-color: #4A148C; 
+            color: white;
+            padding: 12px 45px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(43, 0, 212, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-resume:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(43, 0, 212, 0.5);
+            background-color: #4A148C;
+        }
+        
+        .social-container {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #F3E5F5; 
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .social-container a {
+            color: #5D4037; 
+            font-size: 28px;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-container a:hover {
+            transform: scale(1.2);
+            color: #4A148C !important; 
+        }
+
+        footer {
+            background-color: #F3E5F5; 
+            color: #4A148C;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            background-color: #5D4037; 
+            color: white;
+            cursor: pointer;
+            padding: 0;
+            border-radius: 50%; 
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #4A148C; 
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="floating-container"></div>
+
+    
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" target="_blank">Home</a></li>
+            <li><a href="biodata.html" target="_blank">About Me</a></li>
+            <li><a href="exp.html" target="_blank">Experience</a></li>
+            <li><a href="edu.html" target="_blank">Education</a></li>
+            <li><a href="fam.html" target="_blank">Family</a></li>
+            <li><a href="album.html" target="_blank">Gallery</a></li>
+        </ul>
+        <div class="date-badge" id="currentDate">Loading Date...</div>
+    </nav>
+
+    <header>
+        <h1>My Biodata</h1>
+    </header>
+
+    
+    <div class="info-card" id="gallery">
+        <h2>My <span>Gallery</span></h2>
+        
+        <div class="inner-box">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="pic1.jpeg" alt="Picture 1">
+                </div>
+                <div class="mySlides">
+                    <img src="pic2.jpg" alt="Picture 2">
+                </div>
+                <div class="mySlides">
+                    <img src="pic3.jpg" alt="Picture 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="info-card">
+        <h2>Personal Information</h2>
+        
+        
+        <div class="inner-box">
+            <table class="details-table">
+                <tr>
+                    <td class="label-col">Name</td>
+                    <td class="info-col">Nur Amalina Batrisyia binti Supaat</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Age</td>
+                    <td class="info-col">20 Years Old</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Gender</td>
+                    <td class="info-col">Female</td>
+                </tr>
+                <tr>
+                    <td class="label-col">State</td>
+                    <td class="info-col">Selangor</td>
+                </tr>
+                <tr>
+                    <td class="label-col">City</td>
+                    <td class="info-col">Seri Kembangan</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Hobby</td>
+                    <td class="info-col">Taking Photos</td>
+                </tr>
+            </table>
+
+            
+            <div class="btn-resume-container">
+                <a href="resume.pdf" target="_blank" class="btn-resume">
+                    Resume <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+        
+
+    </div>
+
+    
+    <div class="info-card">
+        <h2>My Favorite <sub>Foods</sub></h2>
+        
+        <div class="inner-box">
+             
+             <ul class="fav-list">
+                <li>🍚 Fried Rice</li>
+                <li>🍝 Spaghetti</li>
+                <li>🥟 Dumpling</li>
+             </ul>
+        </div>
+    </div>
+
+    
+    <div class="info-card">
+        <h2>My Favorite <sup>Drinks</sup></h2>
+        
+        <div class="inner-box">
+            
+            <ul class="fav-list with-bullets">
+                <li>Lemonade</li>
+                <li>Orange Juice</li>
+                <li>Tiramisu Latte</li>
+            </ul>
+        </div>
+    </div>
+
+  
+    <div class="info-card">
+        <h2>My Favorite K-Drama</h2>
+        
+        <div class="drama-container">
+            <div class="drama-card">
+                <img src="kdrama1.jpg" alt="Guardian: The Lonely and Great God">
+                <p class="drama-title">Guardians: The Lonely and Great God</p>
+            </div>
+
+            <div class="drama-card">
+                <img src="kdrama2.jpg" alt="Behind Your Touch">
+                <p class="drama-title">Behind Your Touch</p>
+            </div>
+
+            <div class="drama-card">
+                <img src="kdrama3.jpeg" alt="Crash Landing on You">
+                <p class="drama-title">Crash Landing on You</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="info-card">
+        <h2>My Favorite Song</h2>
+        
+        <div class="song-container">
+            <div class="song-item">
+                <img src="txt.png">
+                <p class="song-title">Deja Vu by TXT</p>
+                <audio controls>
+                    <source src="song1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-item">
+                <img src="yuna.jpeg">
+                <p class="song-title">Lautan by Yuna</p>
+                <audio controls>
+                    <source src="song2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-item">
+                <img src="avrillavigne.jpeg">
+                <p class="song-title">When You're Gone by Avril Lavigne</p>
+                <audio controls>
+                    <source src="song3.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="social-container">
+            <a href="https://www.instagram.com/nur.amlina/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://x.com/amlnadgaf" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </div>
+
+        <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+    </footer>
+
+    
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    
+    <script>
+        function createFloatingFlower() {
+            const container = document.getElementById('floating-container');
+            const flower = document.createElement('div');
+            flower.classList.add('floating-item');
+            flower.innerText = '🌷';
+
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+            flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+            container.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 20000); 
+        }
+
+        setInterval(createFloatingFlower, 500);
+
+        const dateElement = document.getElementById('currentDate');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(() => { plusSlides(1); }, 3000);
+
+        
+        
+        // Ambil elemen button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        // Bila user scroll ke bawah 300px, tunjuk button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "flex"; // Guna flex supaya icon di tengah
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+       
+        mybutton.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+</body>
+</html>

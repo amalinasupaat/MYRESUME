@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family</title>
+    <!-- Font Awesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-image: url('bg.jpg'); 
+        background-color: #ffe4e6; 
+        padding: 20px;
+        overflow-x: hidden;
+        padding-bottom: 20px; 
+    }
+
+   
+    #floating-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .floating-item {
+        position: absolute;
+        bottom: -50px;
+        font-size: 24px;
+        animation: floatUp linear infinite;
+        opacity: 0.7;
+        user-select: none;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.8; }
+        100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    
+    nav {
+        background-color: #F3E5F5; 
+        padding: 15px 30px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #4A148C;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #d63384;
+    }
+
+    .date-badge {
+        position: absolute;
+        right: 20px;
+        background-color:#F3E5F5;
+        padding: 8px 15px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        color: #2D2D2D;
+        font-weight: 500;
+        min-width: 150px;
+        text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+        nav { flex-direction: column; gap: 10px; }
+        .date-badge { position: static; margin-top: 10px; }
+    }
+
+    
+    .white-box-container {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        border-radius: 40px;
+        text-align: center;
+        
+       
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+        transition: all 0.4s ease-in-out; 
+    }
+
+  
+    .white-box-container:hover {
+        transform: translateY(-15px); 
+        box-shadow: 0 15px 30px rgba(74, 20, 140, 0.15); 
+    }
+    
+    
+    .white-box-container h2 {
+        color: #4A148C; 
+        font-size: 24px; 
+        font-weight: 700; 
+        margin-bottom: 20px;
+    }
+
+   
+    header {
+        background-color: #F3E5F5;
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        color: #4A148C;
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+
+    
+    .family-container {
+        display: flex;
+        justify-content: center; 
+        gap: 30px; 
+        flex-wrap: wrap; 
+        padding: 10px;
+    }
+
+    .family-card {
+        background-color: #F3E5F5;
+        width: 320px;
+        padding: 40px 25px;       
+        border-radius: 20px;      
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05); 
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .family-card:hover {
+        transform: translateY(-10px) scale(1.02); 
+        box-shadow: 0 15px 30px rgba(74, 20, 140, 0.15);
+    }
+
+    .card-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%; 
+        object-fit: cover; 
+        margin-bottom: 25px;
+   
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .family-card h3 {
+        color: #4A148C; 
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .family-card p {
+        color: #4a4a4a; 
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    footer {
+        background-color: #F3E5F5; 
+        color: #4A148C;
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="floating-container"></div>
+
+
+<nav>
+   <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">About Me</a></li>
+        <li><a href="exp.html">Experience</a></li>
+        <li><a href="edu.html">Education</a></li>
+        <li><a href="fam.html">Family</a></li>
+        <li><a href="album.html">Gallery</a></li>
+    </ul>
+    <div class="date-badge" id="currentDate">Loading Date...</div>
+</nav>
+
+
+<header>
+    <h1>My Family</h1>
+</header>
+
+
+<div class="white-box-container">
+    
+  
+    <h2>Get To Know My Family</h2>
+    
+    
+    <div class="family-container">
+        
+        
+        <div class="family-card">
+            <img src="ayah.jpeg" alt="Supaat Basrin" class="card-img"> 
+            <h3>SUPAAT BASRIN</h3>
+            <p>My dad is a hardworking and supportive person. He always motivates me to do my best and guides me whenever I need advice.</p>
+        </div>
+
+      
+        <div class="family-card">
+            <img src="mama.jpeg" alt="Marina Zainal Abidin" class="card-img">
+            <h3>MARINA ZAINAL ABIDIN</h3>
+            <p>My mom is caring and understanding. She inspires me with her kindness and is always there for our family no matter what.</p>
+        </div>
+
+        
+        <div class="family-card">
+            <img src="kakak.jpeg" alt="Nur Shamimi Nabila" class="card-img">
+            <h3>NUR SHAMIMI NABILA</h3>
+            <p>My sister is fun, cheerful, and someone I can share everything with. She always knows how to make my day better.</p>
+        </div>
+
+    </div>
+
+</div> 
+
+<footer>
+    <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+</footer>
+
+<script>
+    function createFloatingFlower() {
+        const container = document.getElementById('floating-container');
+        const flower = document.createElement('div');
+        flower.classList.add('floating-item');
+        flower.innerText = '🌷'; 
+
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+        flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+        container.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 20000); 
+    }
+
+    setInterval(createFloatingFlower, 500);
+
+    const dateElement = document.getElementById('currentDate');
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = today.toLocaleDateString('en-US', options);
+</script>
+</body>
+</html>

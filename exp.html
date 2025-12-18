@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Experience</title>
+    <!-- Font Awesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('bg.jpg'); 
+            background-color: #fdfdfd; 
+            padding: 20px;
+            overflow-x: hidden; 
+        }
+
+       
+        #floating-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: -1; 
+            overflow: hidden;
+        }
+
+        .floating-item {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            animation: floatUp linear infinite;
+            opacity: 0.7;
+            user-select: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        
+        nav {
+            background-color: #F3E5F5; 
+            padding: 15px 30px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A148C;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d63384;
+        }
+
+        .date-badge {
+            position: absolute;
+            right: 20px;
+            background-color:#F3E5F5;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #2D2D2D;
+            font-weight: 500;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #F3E5F5;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #4A148C;
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        
+        .info-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px; 
+            position: relative; 
+            z-index: 1; 
+            
+            
+            transition: all 0.3s ease-in-out;
+        }
+
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(74, 20, 140, 0.15);
+        }
+
+        .info-card h2 {
+            color: #4A148C;
+            font-size: 24px; 
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        
+        .job-box {
+            background-color: #F3E5F5; 
+            padding: 25px;
+            border-radius: 10px;
+            text-align: left; 
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .job-box p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .job-box strong {
+            color: #4A148C;
+            font-weight: 700;
+        }
+
+        .job-box ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .job-box li {
+            margin-bottom: 10px;
+        }
+
+        
+        .social-container {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #F3E5F5; 
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .social-container a {
+            color: #5D4037; 
+            font-size: 28px;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-container a:hover {
+            transform: scale(1.2);
+            color: #4A148C; 
+        }
+
+        footer {
+            background-color: #F3E5F5; 
+            color: #4A148C;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <div id="floating-container"></div>
+  
+
+    
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" target="_blank">Home</a></li>
+            <li><a href="biodata.html" target="_blank">About Me</a></li>
+            <li><a href="exp.html" target="_blank">Experience</a></li>
+            <li><a href="edu.html" target="_blank">Education</a></li>
+            <li><a href="fam.html" target="_blank">Family</a></li>
+            <li><a href="album.html" target="_blank">Gallery</a></li>
+        </ul>
+        <div class="date-badge" id="currentDate">Loading Date...</div>
+    </nav>
+
+    
+    <header>
+        <h1>My Experience</h1>
+    </header>
+   
+  
+    <div class="info-card">
+        <h2>Work Experience</h2>
+        
+        <div class="job-box">
+            <p><strong>Job Title:</strong> Internship in Corporate Communication Unit</p>
+            <p><strong>Organization:</strong> Universiti Teknologi MARA (UiTM) Segamat</p>
+            <p><strong>Year:</strong> July-September 2025</p>
+            
+            <p><strong>Responsibilities:</strong></p>
+            <ol>
+                <li>Designed Canva visuals by arranging images, adding titles, and formatting materials.</li>
+                <li>Learned and applied basic digital media skills, including shooting techniques, visual arrangement, and content editing.</li>
+                <li>Assisted in photographing activities, recording video footage, and producing visual content.</li>
+            </ol>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+    </footer>
+
+    
+    <script>
+        
+        function createFloatingFlower() {
+            const container = document.getElementById('floating-container');
+            const flower = document.createElement('div');
+            flower.classList.add('floating-item');
+            flower.innerText = '🌷';
+
+           
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+            flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+            container.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 20000); 
+        }
+
+        setInterval(createFloatingFlower, 500);
+
+        
+        const dateElement = document.getElementById('currentDate');
+        const today = new Date();
+        const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+    </script>
+</body>
+</html>

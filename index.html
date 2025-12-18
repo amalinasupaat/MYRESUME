@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amalina's Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-image: url('bg.jpg'); 
+        background-color: #fdfdfd; 
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    nav {
+        background-color: #F3E5F5; 
+        padding: 15px 30px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .nav-links { list-style: none; display: flex; gap: 30px; }
+    .nav-links a { text-decoration: none; color: #4A148C; font-weight: 600; font-size: 1.1rem; transition: color 0.3s; }
+    .nav-links a:hover { color: #d63384; }
+
+    .date-badge { position: absolute; right: 20px; font-size: 0.9rem; color: #2D2D2D; font-weight: 500; }
+
+    .hero-card {
+        background-color: #F3E5F5; 
+        width: 100%;
+        max-width: 1200px; 
+        margin: 0 auto;
+        padding: 60px 50px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 30px;
+        text-align: left; 
+    }
+    
+    .hero-card p a {
+        color: #4A148C;
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 1px dashed #4A148C;
+    }
+    .hero-card p a:hover { color: #d63384; border-bottom: 1px solid #d63384;}
+
+    .hero-card h1 { color: #4A148C; font-size: 42px; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .hero-card p { color: #333; font-size: 1.1rem; line-height: 1.6; max-width: 900px; }
+    
+   
+    
+
+
+    footer { background-color: #F3E5F5; color: #4A148C; padding: 20px; text-align: center; border-radius: 10px; width: 100%; margin-top: auto; }
+</style>
+</head>
+<body>
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">About Me</a></li>
+        <li><a href="exp.html">Experience</a></li>
+        <li><a href="edu.html">Education</a></li> 
+        <li><a href="fam.html">Family</a></li>
+        <li><a href="album.html">Gallery</a></li>
+    </ul>
+    <div class="date-badge" id="currentDate">Loading Date...</div>
+</nav>
+
+<div class="hero-card">
+    <h1>Amalina's Personal Website 🦋</h1>
+    <p>
+        Welcome to My Personal Website! Hi! I'm Amalina, an information management student at UiTM Segamat. 
+        This website is a little space about me -  my background, education, experience, family and gallery ♡. Feel free to explore!
+    </p>
+</div>
+
+
+<footer>
+    <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+</footer>
+
+<script>
+    const dateElement = document.getElementById('currentDate');
+    const today = new Date();
+    dateElement.textContent = today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+</script>
+</body>
+</html>
