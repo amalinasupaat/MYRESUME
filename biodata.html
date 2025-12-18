@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Biodata</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+    <div id="floating-container"></div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" target="_blank">Home</a></li>
+            <li><a href="biodata.html" target="_blank">About Me</a></li>
+            <li><a href="exp.html" target="_blank">Experience</a></li>
+            <li><a href="edu.html" target="_blank">Education</a></li>
+            <li><a href="fam.html" target="_blank">Family</a></li>
+            <li><a href="album.html" target="_blank">Gallery</a></li>
+        </ul>
+        <div class="date-badge" id="currentDate">Loading Date...</div>
+    </nav>
+
+    <header>
+        <h1>My Biodata</h1>
+    </header>
+
+    <div class="info-card" id="gallery">
+        <h2>My <span>Gallery</span></h2>
+        
+        <div class="inner-box">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="pic1.jpeg" alt="Picture 1">
+                </div>
+                <div class="mySlides">
+                    <img src="pic2.jpg" alt="Picture 2">
+                </div>
+                <div class="mySlides">
+                    <img src="pic3.jpg" alt="Picture 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>Personal Information</h2>
+        
+        <div class="inner-box">
+            <table class="details-table">
+                <tr>
+                    <td class="label-col">Name</td>
+                    <td class="info-col">Nur Amalina Batrisyia binti Supaat</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Age</td>
+                    <td class="info-col">20 Years Old</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Gender</td>
+                    <td class="info-col">Female</td>
+                </tr>
+                <tr>
+                    <td class="label-col">State</td>
+                    <td class="info-col">Selangor</td>
+                </tr>
+                <tr>
+                    <td class="label-col">City</td>
+                    <td class="info-col">Seri Kembangan</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Hobby</td>
+                    <td class="info-col">Taking Photos</td>
+                </tr>
+            </table>
+
+            <div class="btn-resume-container">
+                <a href="resume.pdf" target="_blank" class="btn-resume">
+                    Resume <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>My Favorite <sub>Foods</sub></h2>
+        
+        <div class="inner-box">
+             <ul class="fav-list">
+                <li>🍚 Fried Rice</li>
+                <li>🍝 Spaghetti</li>
+                <li>🥟 Dumpling</li>
+             </ul>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>My Favorite <sup>Drinks</sup></h2>
+        
+        <div class="inner-box">
+            <ul class="fav-list with-bullets">
+                <li>Lemonade</li>
+                <li>Orange Juice</li>
+                <li>Tiramisu Latte</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>My Favorite K-Drama</h2>
+        
+        <div class="drama-container">
+            <div class="drama-card">
+                <img src="kdrama1.jpg" alt="Guardian: The Lonely and Great God">
+                <p class="drama-title">Guardians: The Lonely and Great God</p>
+            </div>
+
+            <div class="drama-card">
+                <img src="kdrama2.jpg" alt="Behind Your Touch">
+                <p class="drama-title">Behind Your Touch</p>
+            </div>
+
+            <div class="drama-card">
+                <img src="kdrama3.jpeg" alt="Crash Landing on You">
+                <p class="drama-title">Crash Landing on You</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>My Favorite Song</h2>
+        
+        <div class="song-container">
+            <div class="song-item">
+                <img src="txt.png">
+                <p class="song-title">Deja Vu by TXT</p>
+                <audio controls>
+                    <source src="song1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-item">
+                <img src="yuna.jpeg">
+                <p class="song-title">Lautan by Yuna</p>
+                <audio controls>
+                    <source src="song2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="song-item">
+                <img src="avrillavigne.jpeg">
+                <p class="song-title">When You're Gone by Avril Lavigne</p>
+                <audio controls>
+                    <source src="song3.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-container">
+            <a href="https://www.instagram.com/nur.amlina/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://x.com/amlnadgaf" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </div>
+
+        <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        
+        function createFloatingFlower() {
+            const container = document.getElementById('floating-container');
+            const flower = document.createElement('div');
+            flower.classList.add('floating-item');
+            flower.innerText = '🌷';
+
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+            flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+            container.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 20000); 
+        }
+        setInterval(createFloatingFlower, 500);
+
+        
+        const dateElement = document.getElementById('currentDate');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+
+       
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        setInterval(() => { plusSlides(1); }, 3000);
+
+        
+        let mybutton = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "flex"; 
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        mybutton.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>
