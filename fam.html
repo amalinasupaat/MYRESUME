@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family</title>
+    
+    <link rel="stylesheet" href="mystyle.css">
+   
+</head>
+<body>
+
+
+<div id="floating-container"></div>
+
+
+<nav>
+   <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">About Me</a></li>
+        <li><a href="exp.html">Experience</a></li>
+        <li><a href="edu.html">Education</a></li>
+        <li><a href="fam.html">Family</a></li>
+        <li><a href="album.html">Gallery</a></li>
+    </ul>
+    <div class="date-badge" id="currentDate">Loading Date...</div>
+</nav>
+
+<header>
+    <h1>My Family</h1>
+</header>
+
+
+<div class="info-card">
+    
+    <h2>Get To Know My Family</h2>
+    
+    <div class="family-container">
+        
+        
+        <div class="family-card">
+            <img src="ayah.jpeg" alt="Supaat Basrin" class="card-img"> 
+            <h3>SUPAAT BASRIN</h3>
+            <p>My dad is a hardworking and supportive person. He always motivates me to do my best and guides me whenever I need advice.</p>
+        </div>
+
+        
+        <div class="family-card">
+            <img src="mama.jpeg" alt="Marina Zainal Abidin" class="card-img">
+            <h3>MARINA ZAINAL ABIDIN</h3>
+            <p>My mom is caring and understanding. She inspires me with her kindness and is always there for our family no matter what.</p>
+        </div>
+
+        
+        <div class="family-card">
+            <img src="kakak.jpeg" alt="Nur Shamimi Nabila" class="card-img">
+            <h3>NUR SHAMIMI NABILA</h3>
+            <p>My sister is fun, cheerful, and someone I can share everything with. She always knows how to make my day better.</p>
+        </div>
+
+    </div>
+
+</div> 
+
+
+<footer>
+    <p>&copy; 2025 Nur Amalina Batrisyia. All rights reserved.</p>
+</footer>
+
+
+<script>
+    // Animation for flowers
+    function createFloatingFlower() {
+        const container = document.getElementById('floating-container');
+        const flower = document.createElement('div');
+        flower.classList.add('floating-item');
+        flower.innerText = '🌷'; 
+
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = Math.random() * 10 + 10 + 's'; 
+        flower.style.fontSize = Math.random() * 20 + 20 + 'px'; 
+
+        container.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 20000); 
+    }
+
+    setInterval(createFloatingFlower, 500);
+
+    
+    const dateElement = document.getElementById('currentDate');
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = today.toLocaleDateString('en-US', options);
+</script>
+
+</body>
+</html>
