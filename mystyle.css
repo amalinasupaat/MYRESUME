@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* Penting untuk animasi bunga */
+    overflow-x: hidden; 
 }
 
 /* --- 2. FLOATING ANIMATION (Background Effect) --- */
@@ -100,6 +100,8 @@ header {
     text-align: center;
     border-radius: 15px;
     margin-bottom: 40px;
+    position: relative; /* Ditambah untuk z-index */
+    z-index: 2;
 }
 
 header h1 {
@@ -407,7 +409,121 @@ audio { width: 100%; height: 40px; border-radius: 20px; }
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
-/* --- 12. FOOTER & SOCIAL ICONS --- */
+/* --- 12. EDUCATION PAGE (Timeline) - DITAMBAH UNTUK EDU.HTML --- */
+
+.timeline-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+    margin-bottom: 50px; 
+}
+
+/* Garis Tengah */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #9C27B0; 
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.timeline-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.col-side {
+    width: 45%;
+    padding: 0 20px;
+    position: relative;
+}
+
+.col-left { text-align: right; }
+.col-right { text-align: left; }
+
+/* Dot Tengah */
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #9C27B0;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #fdfdfd; 
+    box-shadow: 0 0 0 2px #9C27B0;
+    z-index: 1;
+}
+
+/* Content Box untuk Education */
+.content-box {
+    background: #ffffff; 
+    padding: 15px;       
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    cursor: default; 
+}
+
+.content-box:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(74, 20, 140, 0.25); 
+}
+
+.content-box h3 {
+    color: #4A148C;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.content-box p {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.content-box a {
+    color: #0d47a1;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Timeline Images */
+.timeline-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    object-fit: cover;
+    cursor: pointer; 
+}
+
+.image-group {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start; 
+}
+
+.col-left .image-group {
+    justify-content: flex-end;
+}
+
+.image-group .timeline-img {
+    width: 48%; 
+    height: auto;
+}
+
+/* --- 13. FOOTER & SOCIAL ICONS --- */
 footer { 
     background-color: #F3E5F5; 
     color: #4A148C; 
